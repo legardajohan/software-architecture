@@ -1,0 +1,48 @@
+body {
+    align-items: center;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+.content {
+    align-items: center;
+    display: flex;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+#sendMessage {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+#sendMessage:hover {
+    background-color: #45a049;
+}
+
+#response {
+    color: #555;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Tarjeta contenedora */
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    padding: 30px;
+    width: 100%;
+}
