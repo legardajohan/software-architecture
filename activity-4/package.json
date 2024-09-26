@@ -1,0 +1,16 @@
+{
+  "name": "activity-4",
+  "version": "1.0.0",
+  "description": "Se presenta un sistema básico de gestión de usuarios y productos, donde los servicios de **\"Usuarios\"** y **\"Productos\"** están desacoplados. La idea es que cada uno de estos servicios funcione de manera independiente y se puedan acceder a través de API. Usaremos un archivo index.html con algo de estilo, y los servicios estarán implementados en JavaScript.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

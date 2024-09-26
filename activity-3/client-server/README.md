@@ -43,6 +43,3 @@ Este es un excelente enfoque cuando necesitas comunicación en tiempo real entre
 + Pantaleo, G. y Rinaudo, l. (2015). Ingeniería de Software. Buenos Aires: Alfaomega. https://www-alfaomegacloud-com.ibero.basesdedatosezproxy.com/auth/ip?intended_url=https://www-alfaomegacloud-com.ibero.basesdedatosezproxy.com/library/publication/ingenieria-de-software
 
 + Pressman, R. (2010). Ingeniería de software: un enfoque práctico. México: MacGraw-Hill. https://www-ebooks7-24-com.ibero.basesdedatosezproxy.com/?il=16414
-
-+ Marshal, J. (2012). HTTP Made Really Easy: A Practical Guide to Writing Clients and Servers. https://www.jmarshall.com/easy/http/
-
