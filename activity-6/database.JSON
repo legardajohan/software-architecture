@@ -1,0 +1,27 @@
+// Usuarios
+{
+    "_id": ObjectId(),
+    "nombre": "Juan Pérez",
+    "email": "juan.perez@example.com",
+    "telefono": "123456789",
+    "avatar_url": "http://example.com/avatar.jpg"
+  }
+
+// Artículos
+{
+    "_id": ObjectId(),
+    "nombre": "Laptop",
+    "categoria": "informática",
+    "descripcion": "Laptop de última generación",
+    "imagen_url": "http://example.com/laptop.jpg"
+  }
+
+// Préstamos
+{
+    "_id": ObjectId(),
+    "usuario_id": ObjectId("id_del_usuario"),
+    "articulo_id": ObjectId("id_del_articulo"),
+    "fecha_prestamo": ISODate("2023-10-01T10:00:00Z"),
+    "fecha_devolucion": ISODate("2023-10-15T10:00:00Z"),
+    "estado": "pendiente"
+  }
