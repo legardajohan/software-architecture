@@ -15,7 +15,9 @@
     "react-router-dom": "^6.0.0"
   },
   "devDependencies": {
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "sass": "^1.79.4",
+    "sass-loader": "^16.0.2"
   },
   "eslintConfig": {
     "extends": [

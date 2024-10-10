@@ -7,4 +7,5 @@ const userSchema = new mongoose.Schema({
   avatar_url: { type: String }
 });
 
-module.exports = mongoose.model('UserSchema', userSchema);
+                // (nombre de la colección, nombre del esquema);
+module.exports = mongoose.model('Users', userSchema);

@@ -4,9 +4,15 @@ import Header from './components/Header';
 import UserForm from './components/UserForm';
 import ArticleForm from './components/ArticleForm';
 import LoanForm from './components/LoanForm';
-import UserList from './components/UserList';
+
 import ArticleList from './components/ArticleList';
 import LoanList from './components/LoanList';
+
+// actualizando rutas, reorganizando 
+import UserList from './components/user/src/UserList';
+
+
+
 import './style/style.css';
 
 function App() {

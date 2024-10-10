@@ -7,4 +7,4 @@ const articleSchema = new mongoose.Schema({
   image_url: { type: String }
 });
 
-module.exports = mongoose.model('ArticleSchema', articleSchema);
+module.exports = mongoose.model('Articles', articleSchema);

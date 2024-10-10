@@ -6,10 +6,7 @@ const User = require('../models/user-schema');
 router.post('/users', async (req, res) => {
   try {
     const user = new User(req.body);
-    await user.save();
-    
-    // prueba de users
-    console.log('User: ', user); 
+    await user.save(); 
     res.status(201).send(user);
   } catch (err) {
     res.status(400).send(err);

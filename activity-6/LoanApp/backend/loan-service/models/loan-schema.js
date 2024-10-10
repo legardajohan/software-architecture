@@ -8,4 +8,4 @@ const loanSchema = new mongoose.Schema({
   state: { type: String, enum: ['pendiente', 'devuelto', 'atrasado'], default: 'pendiente' }
 });
 
-module.exports = mongoose.model('LoanSchema', loanSchema);
+module.exports = mongoose.model('Loans', loanSchema);

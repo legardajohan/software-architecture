@@ -1,0 +1,64 @@
+@import '../../../../index.scss';
+
+.card {
+    background-color: $la-color-white-primary;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 180px;
+    margin-bottom: 35px;
+    margin-top: 30px;
+    padding-top: 60px;
+    position: relative;
+    text-align: center;
+    width: 270px;
+}
+
+.avatar {
+    align-items: center;
+    background-color: $la-color-pink-primary;
+    border-radius: 50%;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    left: 50%;
+    margin: 0 auto 20px;
+    position: absolute;
+    top: -28px; /* 40% of 100px */
+    transform: translateX(-50%);
+    width: 100px;
+}
+
+.avatar-icon {
+    background-color: $la-color-purple-primary;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+}
+
+h2 {
+    color: $la-color-black-primary;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 15px;
+}
+
+.info p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.edit-button {
+    background-color: $la-color-purple-primary;
+    border: none;
+    border-radius: 5px;
+    color: $la-color-white-primary;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+    background-color: #4f0aa6;
+}
