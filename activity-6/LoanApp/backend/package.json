@@ -2,11 +2,14 @@
   "name": "loanapp-backend",
   "version": "1.0.0",
   "scripts": {
-    "start": "node user-service/user-service.js & node article-service/article-service.js & node loan-service/loan-service.js"
+    "start": "concurrently \"node user-service/user-service.js\" \"node article-service/article-service.js\" \"node loan-service/loan-service.js\""
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mongoose": "^6.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
   }
 }

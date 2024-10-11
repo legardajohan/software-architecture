@@ -56,26 +56,34 @@ db.articles.insertMany([
 
 // Insertar datos en la coleccion de loans
 db.loans.insertMany([
-    {
-      user_id: 1,
-      article_id: 1,
-      loan_date: new Date("2024-10-01"),
-      return_date: null, // Aún no devuelto
-      state: "pendiente"
+  {
+    user_id: "6705d16c104405ee61e8a295",
+    article_id: "6705d188104405ee61e8a298",
+    loan_date: {
+      $date: "2024-10-01T00:00:00.000Z"
     },
-    {
-      user_id: 2,
-      article_id: 2,
-      loan_date: new Date("2024-09-28"),
-      return_date: new Date("2024-10-05"),
-      state: "devuelto"
+    return_date: null,
+    state: "Pendiente"
+  },
+  {
+    user_id: "6705d16c104405ee61e8a296",
+    article_id: "6705d188104405ee61e8a299",
+    loan_date: {
+      $date: "2024-09-28T00:00:00.000Z"
     },
-    {
-      user_id: 3,
-      article_id: 3,
-      loan_date: new Date("2024-10-03"),
-      return_date: null, // Aún no devuelto
-      state: "pendiente"
-    }
+    return_date: {
+      $date: "2024-10-05T00:00:00.000Z"
+    },
+    state: "Devuelto"
+  },
+  {
+    user_id: "6705d16c104405ee61e8a297",
+    article_id: "6705d188104405ee61e8a29a",
+    loan_date: {
+      $date: "2024-10-03T00:00:00.000Z"
+    },
+    return_date: null,
+    state: "Pendiente"
+  }
 ]);
   

@@ -45,7 +45,7 @@ h2 {
 }
 
 .info p {
-    color: #666;
+    color: $la-color-gray-primary;
     margin: 5px 0;
 }
 
@@ -60,5 +60,5 @@ h2 {
 }
 
 .edit-button:hover {
-    background-color: #4f0aa6;
+    background-color: $la-color-purple-dark;
 }

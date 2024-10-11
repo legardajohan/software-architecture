@@ -1,0 +1,67 @@
+@import '../../../../index.scss';
+
+.card-article {
+    background-color: white;
+    border-radius: 11px;
+    box-shadow: 0 4px 11px rgba(0, 0, 0, 0.1);
+    height: 380px;
+    margin-bottom: 20px;
+    width: 320px;
+}
+
+.image-content{
+    align-items: center;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+    display: flex;
+    height: 190px;
+    justify-content: center;
+    overflow: hidden;
+    padding: auto;
+}
+
+.card-image {
+    height: auto;
+    width: 100%;
+}
+.card-content {
+    padding: 16px;
+    text-align: left;
+}
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 8px;
+}
+.free-shipping {
+    color: #00a650;
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.free-shipping::before {
+    content: "✓";
+    margin-right: 4px;
+}
+.product-name {
+    font-size: 14px;
+    margin: 0 0 16px;
+}
+.details-button {
+    background-color: transparent;
+    border: 1px solid $la-color-purple-primary;
+    border-radius: 4px;
+    color: $la-color-purple-primary;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+}
+.details-button:hover {
+    background-color: $la-color-purple-primary;
+    color: white;
+}

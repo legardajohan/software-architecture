@@ -1,0 +1,17 @@
+@import '../../../../index.scss';
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    max-width: 800px;
+    width: 100%;
+}
+th, td {
+    border: 1px solid $la-color-pink-primary;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    color: $la-color-purple-primary;
+    font-weight: bold;
+}

@@ -1,17 +1,45 @@
 import React, { useState } from 'react';
 
-function LoanForm() {
+const LoanForm = () => {
   const [user_id, setUserId] = useState('');
   const [article_id, setArticleId] = useState('');
   const [loan_date, setLoanDate] = useState('');
   const [return_date, setReturnDate] = useState('');
-  const [state, setState] = useState('pendiente');
+  const [state, setState] = useState('Pendiente');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Lógica para enviar los datos al backend
-    console.log({ user_id, article_id, loan_date, return_date, state });
-  };
+
+    const newLoan = {
+      user_id,
+      article_id,
+      loan_date,
+      return_date,
+      state
+    }; 
+
+    console.log('Nuevo prestamo: ', newLoan);
+
+  try {
+    const response = await fetch("http://localhost:3003/loans", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newLoan)
+      });
+    
+    if (response.ok) {
+      console.log("Usuario guardado correctamente");
+      // Reiniciar el formulario o mostrar un mensaje de éxito
+    } else {
+      console.error("Error al guardar el usuario");
+    }
+  } catch (error) {
+    console.error("Error en la solicitud: ", error);
+  }
+};
 
   return (
     <form onSubmit={handleSubmit}>
@@ -28,6 +56,6 @@ function LoanForm() {
       <button type="submit">Registrar Préstamo</button>
     </form>
   );
-}
+};
 
 export default LoanForm;
