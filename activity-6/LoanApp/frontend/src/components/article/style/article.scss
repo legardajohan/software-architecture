@@ -1,15 +1,15 @@
 @import '../../../../index.scss';
 
-.card-article {
-    background-color: white;
+.article-card {
+    background-color: $la-color-white-primary;
     border-radius: 11px;
     box-shadow: 0 4px 11px rgba(0, 0, 0, 0.1);
-    height: 380px;
+    height: 360px;
     margin-bottom: 20px;
     width: 320px;
 }
 
-.image-content{
+.article-image-content {
     align-items: center;
     border-top-left-radius: 11px;
     border-top-right-radius: 11px;
@@ -20,48 +20,48 @@
     padding: auto;
 }
 
-.card-image {
+.article-image {
     height: auto;
     width: 100%;
 }
-.card-content {
+.article-content {
     padding: 16px;
     text-align: left;
 }
-.price {
-    font-size: 24px;
+.article-name {
+    font-size: 20px;
     font-weight: bold;
     margin: 0 0 8px;
 }
-.free-shipping {
-    color: #00a650;
+.article-category {
+    color: $la-color-green-primary;
     display: flex;
     font-size: 14px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
-.free-shipping::before {
+.article-category::before {
     content: "✓";
     margin-right: 4px;
 }
-.product-name {
+.article-description {
     font-size: 14px;
     margin: 0 0 16px;
 }
-.details-button {
+
+.article-button {
     background-color: transparent;
-    border: 1px solid $la-color-purple-primary;
-    border-radius: 4px;
-    color: $la-color-purple-primary;
+    border: 1px solid $la-color-pink-primary;
+    border-radius: 8px;
+    color: $la-color-pink-primary;
     cursor: pointer;
-    display: block;
-    font-size: 16px;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
+    font-size: 13px;
+    padding: 10px 20px;
     transition: background-color 0.3s ease, color 0.3s ease;
     width: 100%;
 }
-.details-button:hover {
-    background-color: $la-color-purple-primary;
-    color: white;
+
+.article-button:hover {
+    background-color: $la-color-pink-primary;
+    color: $la-color-white-primary;
 }
+  

@@ -5,9 +5,11 @@ import ArticleForm from './components/article/src/ArticleForm';
 import ArticleList from './components/article/src/ArticleList';
 import LoanForm from './components/loan/src/LoanForm';
 import LoanList from './components/loan/src/LoanList';
-import UserForm from './components/user/src/UserForm';
+import Login from './components/user/src/UserLogin';
+import Register from './components/user/src/UserRegister';
 import UserList from './components/user/src/UserList';
-import './style/style.css';
+import PrivateRoute from './components/PrivateRoute'; // Importar PrivateRoute
+import './style/style.scss';
 
 function App() {
   return (
@@ -15,12 +17,28 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/users/new" element={<UserForm />} />
-          <Route path="/articles/new" element={<ArticleForm />} />
-          <Route path="/loans/new" element={<LoanForm />} />
-          <Route path="/users" element={<UserList />} />
-          <Route path="/articles" element={<ArticleList />} />
+          {/* Rutas públicas */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/loans" element={<LoanList />} />
+
+          {/* Rutas protegidas usando PrivateRoute */}
+          <Route 
+            path="/articles/new" 
+            element={<PrivateRoute><ArticleForm /></PrivateRoute>} 
+          />
+          <Route 
+            path="/loans/new" 
+            element={<PrivateRoute><LoanForm /></PrivateRoute>} 
+          />
+          <Route 
+            path="/users" 
+            element={<PrivateRoute><UserList /></PrivateRoute>} 
+          />
+          <Route 
+            path="/articles" 
+            element={<PrivateRoute><ArticleList /></PrivateRoute>} 
+          />
         </Routes>
       </div>
     </Router>

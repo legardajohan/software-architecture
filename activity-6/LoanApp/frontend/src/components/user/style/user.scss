@@ -1,6 +1,6 @@
 @import '../../../../index.scss';
 
-.card {
+.user-card {
     background-color: $la-color-white-primary;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -13,7 +13,7 @@
     width: 270px;
 }
 
-.avatar {
+.user-avatar {
     align-items: center;
     background-color: $la-color-pink-primary;
     border-radius: 50%;
@@ -28,7 +28,7 @@
     width: 100px;
 }
 
-.avatar-icon {
+.user-avatar-icon {
     background-color: $la-color-purple-primary;
     border-radius: 50%;
     height: 90px;
@@ -40,25 +40,29 @@ h2 {
     margin-bottom: 10px;
 }
 
-.info {
+.user-info {
     margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.info p {
+.user-info p {
     color: $la-color-gray-primary;
     margin: 5px 0;
 }
 
-.edit-button {
-    background-color: $la-color-purple-primary;
-    border: none;
-    border-radius: 5px;
-    color: $la-color-white-primary;
+.user-edit-button {
+    background-color: transparent;
+    border: 1px solid $la-color-pink-primary;
+    border-radius: 8px;
+    color: $la-color-pink-primary;
     cursor: pointer;
+    font-size: 13px;
     padding: 10px 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 50%;
 }
 
-.edit-button:hover {
-    background-color: $la-color-purple-dark;
+.user-edit-button:hover {
+    background-color: $la-color-pink-primary;
+    color: $la-color-white-primary;
 }

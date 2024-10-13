@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+const token = localStorage.getItem('token');
 const LoanForm = () => {
   const [user_id, setUserId] = useState('');
   const [article_id, setArticleId] = useState('');
@@ -25,7 +26,8 @@ const LoanForm = () => {
     const response = await fetch("http://localhost:3003/loans", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Authorization": token, // Aquí envías el token
         },
         body: JSON.stringify(newLoan)
       });

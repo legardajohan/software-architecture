@@ -15,15 +15,15 @@ function ArticleList() {
     <div>
       <h2>Artículos</h2>
       {articles.map((article) => (
-        <div key={article._id} className="card-article">
-          <div className="image-content">
-            <img src={article.image_url} alt={`${article.name} image`} className="card-image" />
+        <div key={article._id} className="article-card">
+          <div className="article-image-content">
+            <img src={article.image_url} alt={`${article.name} image`} className="article-image" />
           </div>
-          <div className="card-content">
-            <p className="price">{article.name}</p>
-            <p className="free-shipping">{article.category}</p>
-            <p className="product-name">{article.description}</p>
-            <button className="details-button">Solicitar</button>
+          <div className="article-content">
+            <p className="article-name">{article.name}</p>
+            <p className="article-category">{article.category}</p>
+            <p className="article-description">{article.description}</p>
+            <button className="article-button">Solicitar</button>
           </div>
         </div>
       ))}

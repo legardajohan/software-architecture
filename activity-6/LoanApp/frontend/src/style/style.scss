@@ -1,0 +1,53 @@
+@import '../../index.scss';
+
+body {
+  align-items: center;
+  background-color: $la-color-gray-light;
+  display: flex;
+  font-family: 'Segoe UI', Tahoma;
+  justify-content: center;
+  margin: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+h1, h2 {
+  color: $la-color-purple-primary;
+}
+
+form {
+  background-color: $la-color-white-primary;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 500px;
+  padding: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="date"], input[type="password"], select {
+  border: 1px solid $la-color-gray-light;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  width: 470px;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid $la-color-pink-primary;
+  border-radius: 8px;
+  color: $la-color-pink-primary;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: $la-color-pink-primary;
+  color: $la-color-white-primary;
+}
