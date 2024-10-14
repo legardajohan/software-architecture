@@ -12,24 +12,27 @@ db.createCollection("loans");
 
 // Insertar datos en la coleccion de user
 db.users.insertMany([
-    {
-      name: "Juan Pérez",
-      email: "juan.perez@example.com",
-      phone: "555-1234",
-      avatar_url: "https://randomuser.me/api/portraits/men/1.jpg"
-    },
-    {
-      name: "María Gómez",
-      email: "maria.gomez@example.com",
-      phone: "555-5678",
-      avatar_url: "https://randomuser.me/api/portraits/women/2.jpg"
-    },
-    {
-      name: "Carlos Rodríguez",
-      email: "carlos.rodriguez@example.com",
-      phone: "555-8765",
-      avatar_url: "https://randomuser.me/api/portraits/men/3.jpg"
-    }
+  {
+    name: "Juan Pérez",
+    email: "juan.perez@example.com",
+    password: "$2a$10$nRij5nS2pwrCfxsKImK7JulRZPiXt1LuSrmhjU0qkoR7NBjWPGMM.",
+    phone: "555-1234",
+    avatar_url: "https://randomuser.me/api/portraits/men/1.jpg"
+  },
+  {
+    name: "María Gómez",
+    email: "maria.gomez@example.com",
+    password: "$2a$10$Swc9FcOssJ5P5c63g/UdRetOQNr4Cr.opKBpXllj/0SVZ6C2z.U12",
+    phone: "555-5678",
+    avatar_url: "https://randomuser.me/api/portraits/women/2.jpg"
+  },
+  {
+    name: "Carlos Rodríguez",
+    email: "carlos.rodriguez@example.com",
+    password: "$2a$10$L6e32V7GEPXeXu8sA8Nweuy6da.ATEuP4MiZgrIFdykYFirXeBRRm",
+    phone: "555-8765",
+    avatar_url: "https://randomuser.me/api/portraits/men/3.jpg"
+  }
 ]);
 
 // Insertar datos en la coleccion articles

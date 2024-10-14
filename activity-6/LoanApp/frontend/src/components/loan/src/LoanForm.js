@@ -33,10 +33,10 @@ const LoanForm = () => {
       });
     
     if (response.ok) {
-      console.log("Usuario guardado correctamente");
+      console.log("Préstamo guardado correctamente");
       // Reiniciar el formulario o mostrar un mensaje de éxito
     } else {
-      console.error("Error al guardar el usuario");
+      console.error("Error al guardar el préstamo");
     }
   } catch (error) {
     console.error("Error en la solicitud: ", error);
