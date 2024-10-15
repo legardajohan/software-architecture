@@ -12,13 +12,15 @@ router.post('/register', async (req, res) => {
   
   try {
     // Cifrar la contraseña
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // const hashedPassword = await bcrypt.hash(password, 10);
 
+    // console.log('Hash register', hashedPassword);
     // Crear un nuevo usuario con la contraseña cifrada
     const newUser = new User({
       name,
       email,
-      password: hashedPassword,
+      //password: hashedPassword,
+      password,
       phone,
       avatar_url
     });
@@ -54,6 +56,7 @@ router.post('/login', async (req, res) => {
     // Comparar la constraseña ingresada con la almacenada
     const isPasswordValid = await bcrypt.compare(password, user.password);
     console.log('Comparando contraseñas: ', password, ' y ', user.password);
+    
 
     // Comparando contraseña que viene de Mongo
     console.log('Contraseña almacenada (hash): ', user.password);

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Hook para redirigir 
   
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,6 +27,13 @@ const Login = () => {
       if (data.token) {
         localStorage.setItem('token', data.token);
         console.log('Login exitoso');
+
+        // Limpiamos el formulario
+        setEmail('');
+        setPassword('');
+
+        // Redirigimos a la página que deseamos llevar al usuario, loans
+        navigate('/users'); // ruta de preferencia
       } else {
         console.error('Error en el login');
       }

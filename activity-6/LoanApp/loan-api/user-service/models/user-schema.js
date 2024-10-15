@@ -17,8 +17,10 @@ userSchema.pre('save', async function (next) {
 
   try {
     // Cifrado de la contraseña
+    console.log('Bcrypt schema: ', this.password);
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
+    console.log('Password ya encriptada: ', this.password);
     next();
   } catch (error) {
     return next(error);

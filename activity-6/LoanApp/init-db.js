@@ -15,23 +15,23 @@ db.users.insertMany([
   {
     name: "Juan Pérez",
     email: "juan.perez@example.com",
-    password: "$2a$10$nRij5nS2pwrCfxsKImK7JulRZPiXt1LuSrmhjU0qkoR7NBjWPGMM.",
+    password: "$2a$10$cVg0xE1TC.yApiQJMK9X2OcophaTkmR/dKwDUR99qAaSJQC1.31lK",
     phone: "555-1234",
-    avatar_url: "https://randomuser.me/api/portraits/men/1.jpg"
+    avatar_url: "https://randomuser.me/api/portraits/men/3.jpg"
   },
   {
     name: "María Gómez",
     email: "maria.gomez@example.com",
-    password: "$2a$10$Swc9FcOssJ5P5c63g/UdRetOQNr4Cr.opKBpXllj/0SVZ6C2z.U12",
+    password: "$2a$10$g6p24yrwD1x3/zYSyAahQuP5mt/REF5soQ3I/4iWDsdiP6ZnYcjx2",
     phone: "555-5678",
     avatar_url: "https://randomuser.me/api/portraits/women/2.jpg"
   },
   {
     name: "Carlos Rodríguez",
     email: "carlos.rodriguez@example.com",
-    password: "$2a$10$L6e32V7GEPXeXu8sA8Nweuy6da.ATEuP4MiZgrIFdykYFirXeBRRm",
+    password: "$2a$10$ZaJMy0VcJxS.K8Hg0Di2Sum67qiQBTm4AmqsByszaGsVQeRQUZjgO",
     phone: "555-8765",
-    avatar_url: "https://randomuser.me/api/portraits/men/3.jpg"
+    avatar_url: "https://randomuser.me/api/portraits/men/4.jpg"
   }
 ]);
 
