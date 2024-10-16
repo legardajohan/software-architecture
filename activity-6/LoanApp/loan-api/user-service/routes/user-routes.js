@@ -6,6 +6,18 @@ const User = require('../models/user-schema');
 
 const secretKey = 'mySuperSecretKey'; // Clave secreta para generar el token
 
+// Middleware para verificar el JWT
+const verifyToken = (req, res, next) => {
+  const token = req.headers['authorization'];
+  if (!token) return res.status(403).json({ error: 'No token provided' });
+
+  jwt.verify(token, secretKey, (err, decoded) => {
+    if (err) return res.status(500).json({ error: 'Failed to authenticate token' });
+    req.userId = decoded.userId;
+    next();
+  });
+};
+
 // Registro de usuarios
 router.post('/register', async (req, res) => {
   const { name, email, password, phone, avatar_url } = req.body;
@@ -57,7 +69,6 @@ router.post('/login', async (req, res) => {
     const isPasswordValid = await bcrypt.compare(password, user.password);
     console.log('Comparando contraseñas: ', password, ' y ', user.password);
     
-
     // Comparando contraseña que viene de Mongo
     console.log('Contraseña almacenada (hash): ', user.password);
     if (!isPasswordValid) return res.status(401).json({ error: 'Contraseña incorrecta' });
@@ -69,17 +80,5 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ error: 'Error al iniciar sesión' });
   }
 });
-
-// Middleware para verificar el JWT
-const verifyToken = (req, res, next) => {
-  const token = req.headers['authorization'];
-  if (!token) return res.status(403).json({ error: 'No token provided' });
-
-  jwt.verify(token, secretKey, (err, decoded) => {
-    if (err) return res.status(500).json({ error: 'Failed to authenticate token' });
-    req.userId = decoded.userId;
-    next();
-  });
-};
 
 module.exports = { router, verifyToken };

@@ -1,14 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const loanRoutes = require('./routes/loan-routes');
+const { router, verifyToken } = require('./routes/loan-routes');
 
 const app = express();
 
 // Middleware para permitir CORS (para que el frontend pueda hacer peticiones)
 app.use(cors());
 app.use(express.json());
-app.use(loanRoutes);
+//app.use(verifyToken);
+app.use(router);
 
 mongoose.set('strictQuery', false);
 const PORT = process.env.PORT || 3003;
