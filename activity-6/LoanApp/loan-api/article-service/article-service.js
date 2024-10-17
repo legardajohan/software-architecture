@@ -1,14 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const articleRoutes = require('./routes/article-routes');
+const { router, verifyToken } = require('./routes/article-routes');
 
 const app = express();
 
 // Middleware para permitir CORS (para que el frontend pueda hacer peticiones)
 app.use(cors());
 app.use(express.json());
-app.use(articleRoutes);
+app.use(router);
 
 mongoose.set('strictQuery', false);
 const PORT = process.env.PORT || 3002;

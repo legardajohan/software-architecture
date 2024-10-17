@@ -69,16 +69,45 @@ const LoanForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <h2>Registrar Préstamo</h2>
-      <input type="text" name="user_id" placeholder="ID de Usuario" value={loanForm.user_id} onChange={handleInputChange} required />
-      <input type="text" name="article_id" placeholder="ID de Artículo" value={loanForm.article_id} onChange={handleInputChange} required />
-      <input type="date" name="loan_date" value={loanForm.loan_date} onChange={handleInputChange} required />
-      <input type="date" name="return_date" value={loanForm.return_date} onChange={handleInputChange} />
-      <select name="state" value={loanForm.state} onChange={handleInputChange}>
+      <input 
+        type="text" 
+        name="user_id" 
+        placeholder="ID de Usuario" 
+        value={loanForm.user_id} 
+        onChange={handleInputChange} 
+        required 
+      />
+      <input 
+        type="text" 
+        name="article_id" 
+        placeholder="ID de Artículo" 
+        value={loanForm.article_id} 
+        onChange={handleInputChange} 
+        required 
+      />
+      <input 
+        type="date" 
+        name="loan_date" 
+        value={loanForm.loan_date} 
+        onChange={handleInputChange} 
+        required 
+      />
+      <input 
+        type="date" 
+        name="return_date" 
+        value={loanForm.return_date} 
+        onChange={handleInputChange} 
+      />
+      <select 
+        name="state" 
+        value={loanForm.state} 
+        onChange={handleInputChange} 
+      >
         <option value="Pendiente">Pendiente</option>
         <option value="Devuelto">Devuelto</option>
         <option value="Atrasado">Atrasado</option>
       </select>
-      <button type="submit">Registrar Préstamo</button>
+      <button type="submit">Guardar</button>
       {/* Contenedor para mostrar los toast */}
       <ToastContainer />
     </form>

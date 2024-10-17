@@ -8,7 +8,7 @@ const app = express();
 // Middleware para permitir CORS (para que el frontend pueda hacer peticiones)
 app.use(cors());
 app.use(express.json());
-//app.use(verifyToken);
+//app.use(verifyToken); // solo se usaria si todas las rutas requieren verificación del token
 app.use(router);
 
 mongoose.set('strictQuery', false);

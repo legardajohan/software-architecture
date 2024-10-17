@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const Loan = require('../models/loan-schema');
-// const { verifyToken } = require('../../user-service/routes/user-routes');
 
 const secretKey = 'mySuperSecretKey'; // Clave secreta para generar el token
 
@@ -22,11 +21,10 @@ const verifyToken = (req, res, next) => {
 router.post('/loans', verifyToken, async (req, res) => {
   try {
     const newLoan = new Loan(req.body);
-
     await newLoan.save();
     res.status(201).send("Préstamo guardado correctamente");
   } catch (err) {
-    console.error("Error al guardar el préstamo: ");
+    console.error("Error al guardar el préstamo");
     res.status(400).send(err);
   }
 });
