@@ -1,0 +1,94 @@
+@import '../../../../index.scss';
+
+// Input style : BEM
+
+.label {
+    display: flex;
+    margin-bottom: 10px;
+
+    &__input-line {
+        position: relative;
+    }
+
+    &__line {
+        background: $la-color-pink-primary;
+        bottom: 0;
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        transition: 0.3s all ease;
+        width: 0;
+    }
+
+    &__label-text {
+        background-color: $la-color-white-primary;
+        border: none;
+        border-bottom: 1px solid $la-color-gray-light;
+        border-radius: 0;
+        box-shadow: none;
+        color: $la-color-white-primary;
+        font-size: 14px;
+        outline: none;
+        padding: 7px 7px 7px 12px;
+        width: 430px;
+
+        &:focus {
+            border-bottom: 1px solid $la-color-white-primary;
+        }
+
+        &:focus + .label__line {
+            width: 100%;
+        }
+
+        &::placeholder {
+            color: $la-color-gray-primary;
+        }
+    }
+}
+
+// Input de Google 
+
+.input-group {
+    font-family: 'Segoe UI', Tahoma;
+    font-size: 15px;
+    margin: 10px;
+    position: relative;
+    --primary: #{$la-color-pink-primary};
+}
+
+.input {
+    all: unset;
+    border: 1px solid $la-color-gray-light;
+    border-radius: 11px;
+    color: $la-color-black-primary;
+    padding: 7px 15px;
+    text-align: left;
+    transition: 150ms
+        cubic-bezier(0.4, 0, 0.2, 1);
+    width: 400px;
+}
+
+.label {
+    color: $la-color-gray-light;
+    left: 15px;
+    pointer-events: none;
+    position: absolute;
+    top: 7px;
+    transition: 150ms
+        cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:focus {
+    border: 1px solid
+        var(--primary);
+}
+
+.input:is(:focus, :valid) ~ label {
+    background-color: $la-color-white-primary;
+    color: var(--primary);
+    padding-inline: 8px;
+    transform:
+        translateY(-90%)
+        scale(0.8);
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Input from '../../UI/src/InputG';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Importar estilos de toastify
 
@@ -71,48 +72,53 @@ function Register() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={ handleSubmit }>
       <h2>Registrar Usuario</h2>
-      <input 
+      <Input 
         type="text" 
         name="name"
-        placeholder="Nombre" 
-        value={registerForm.name} 
-        onChange={handleInputChange} 
+        label="Nombre" 
+        value={ registerForm.name } 
+        onChange={ handleInputChange }
+        id="name" 
         required 
       />
-      <input 
+      <Input 
         type="email"
         name="email" 
-        placeholder="Correo electrónico" 
-        value={registerForm.email} 
-        onChange={handleInputChange} 
+        label="Correo electrónico" 
+        value={ registerForm.email } 
+        onChange={ handleInputChange } 
+        id="email"
         required 
       />
-      <input 
+      <Input 
         type="text" 
         name="phone"
-        placeholder="Teléfono" 
-        value={registerForm.phone} 
-        onChange={handleInputChange} 
+        label="Teléfono" 
+        value={ registerForm.phone } 
+        onChange={ handleInputChange } 
+        id="phone"
+        required
       />
-      <input 
+      <Input 
         type="text" 
         name="avatar_url"
-        placeholder="URL del Avatar" 
-        value={registerForm.avatar_url} 
-        onChange={handleInputChange} 
+        label="URL del Avatar" 
+        value={ registerForm.avatar_url } 
+        onChange={ handleInputChange } 
+        id="avatar_url"
+        required
       />
-      <input 
+      <Input 
         type="password" 
         name="password"
-        placeholder="Contraseña" 
+        label="Contraseña" 
         value={registerForm.password} 
         onChange={handleInputChange} 
         required 
       />
       <button type="submit">Guardar Usuario</button>
-      {/* Contenedor para mostrar los toast */}
       <ToastContainer />
     </form>
   );

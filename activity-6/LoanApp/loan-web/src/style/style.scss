@@ -2,7 +2,7 @@
 
 body {
   align-items: center;
-  background-color: $la-color-gray-light;
+  background-color: $la-color-gray-lighter;
   display: flex;
   font-family: 'Segoe UI', Tahoma;
   justify-content: center;
@@ -28,13 +28,13 @@ form {
   padding: 10px;
 }
 
-input[type="text"], input[type="email"], input[type="date"], input[type="password"], select {
-  border: 1px solid $la-color-gray-light;
-  border-radius: 5px;
-  margin: 10px 0;
-  padding: 10px;
-  width: 470px;
-}
+// input[type="text"], input[type="email"], input[type="date"], input[type="password"], select {
+//   border: 1px solid $la-color-gray-light;
+//   border-radius: 5px;
+//   margin: 10px 0;
+//   padding: 10px;
+//   width: 470px;
+// }
 
 button {
   background-color: transparent;
@@ -42,8 +42,9 @@ button {
   border-radius: 8px;
   color: $la-color-pink-primary;
   cursor: pointer;
-  font-size: 13px;
-  padding: 10px 20px;
+  font-family: 'Segoe UI', Tahoma;
+  font-size: 15px;
+  padding: 7px 20px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 

@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Input from '../../UI/src/InputG';
+import '../style/input.scss';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [ loginForm, setLoginForm ] = useState({
+    email: '',
+    password: ''
+  });
   const navigate = useNavigate(); // Hook para redirigir 
-  
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setLoginForm({
+      ...loginForm,
+      [name]: value
+    });
+  };
+
   const handleLogin = async (e) => {
     e.preventDefault();
-    
+    const singIn = { ...loginForm };
+
     try {
       const response = await fetch('http://localhost:3001/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify(singIn)
       });
       // Verificando datos enviados
-      console.log({ email, password });
-      
+      console.log(singIn);
+
       const data = await response.json();
       // Inspección de la respuesta del backend
       console.log('Información recibida del backend:', data);
@@ -29,8 +42,10 @@ const Login = () => {
         console.log('Login exitoso');
 
         // Limpiamos el formulario
-        setEmail('');
-        setPassword('');
+        setLoginForm({
+          email: '',
+          password: ''
+        });
 
         // Redirigimos a la página que deseamos llevar al usuario, loans
         navigate('/users'); // ruta de preferencia
@@ -43,23 +58,27 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-        <h2>Login</h2>
-        <input
-            type="email"
-            placeholder="Correo electrónico"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-        />
-        <input
-            type="password"
-            placeholder="Contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-        />
-        <button type="submit">Iniciar Sesión</button>
+    <form onSubmit={ handleLogin }>
+      <h2>Login</h2>
+      <Input 
+        type="email"
+        name="email"
+        label="Correo electrónico"
+        value={ loginForm.email }
+        onChange={ handleInputChange }
+        id="email"
+        required
+      />
+      <Input 
+        type="password"
+        name="password"
+        value={ loginForm.password }
+        label="Contraseña"
+        onChange={ handleInputChange }
+        id="password"
+        required
+      />
+      <button type="submit">Iniciar Sesión</button>
     </form>
   );
 };
