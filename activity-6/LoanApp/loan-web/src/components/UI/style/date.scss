@@ -1,0 +1,37 @@
+@import '../../../../index.scss';
+
+// Input de Google 
+
+.input-groupD {
+    font-family: 'Segoe UI', Tahoma;
+    font-size: 15px;
+    margin: 10px;
+    position: relative;
+}
+
+.inputD {
+    all: unset;
+    border: 0.5px solid $la-color-gray-light;
+    border-radius: 11px;
+    color: $la-color-black-primary;
+    padding: 7px 15px;
+    text-align: left;
+    width: 400px;
+}
+
+.inputD:focus {
+    border: 1px solid $la-color-pink-primary;
+}
+
+.labelDate {
+    background-color: white;
+    color: $la-color-pink-primary;
+    font-size: 12px;
+    left: 15px;
+    padding: 0 4px;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    transition: color 0.2s;
+}

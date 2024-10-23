@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import Input from '../../UI/src/InputG';
+import Input from '../../UI/src/TextInput';
 import Select from '../../UI/src/Select';
+import Label from '../../UI/src/Label';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Importar estilos de toastify
+// Prueba date
+import Date from '../../UI/src/Date';
 
 // Obtenemos el token de localStorage
 const token = localStorage.getItem('token');
@@ -14,10 +17,10 @@ const LoanForm = () => {
     article_id: '',
     loan_date: '',
     return_date: '',
-    state: 'Pendiente'
+    state: ''
   });
 
-  const loanState = ['Pendiente', 'Devuelto', 'Atrasado', 'Otro'];
+  const loanState = ['Pendiente', 'Devuelto', 'Atrasado'];
 
   // Manejar los cambios en los inputs
   const handleInputChange = (e) => {
@@ -91,6 +94,10 @@ const LoanForm = () => {
         id="article_id"
         required 
       />
+      <Label 
+        id="loan_date"
+        text="Fecha de préstamo"
+      />
       <Input 
         type="date" 
         name="loan_date" 
@@ -109,10 +116,17 @@ const LoanForm = () => {
         value={ loanForm.state } 
         onChange={ handleInputChange }
         options={ loanState }
-        label="Estado"
+        label="Selecciona el estado"
         id="state"
       />
       <button type="submit">Guardar</button>
+      <Date 
+        type="date" 
+        name="return_date" 
+        value={ loanForm.return_date } 
+        onChange={ handleInputChange }
+        label="Fecha de préstamo"
+      />
       <ToastContainer />
     </form>
   );

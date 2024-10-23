@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Input from '../../UI/src/InputG';
+import Input from '../../UI/src/TextInput';
 import '../style/input.scss';
 
 const Login = () => {

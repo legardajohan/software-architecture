@@ -1,15 +1,15 @@
 import '../style/select.scss';
 
 const Select = ({ label, options, ...inputProps }) => {
-    return (
+    return (   
         <select
-            className="input-group"
+            className="select"
             { ...inputProps }
         >
+            <option value='' disabled>{ label }</option>
             {options.map((option) => (
                 <option key={ option } value={ option }>{ option }</option>
             ))}
-            <label className="label" htmlFor={ inputProps.id }>{ label }</label>
         </select>
     );
 };
