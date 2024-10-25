@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import Input from '../../UI/src/Input';
+import Select from '../../UI/src/Select';
+import Button from '../../UI/src/Button';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Importar estilos de toastify
 
@@ -13,6 +16,8 @@ function ArticleForm() {
     description: '',
     image_url: ''
   }); 
+
+  const categoryOptions = ['Informática', 'Deportes', 'Otro'];
 
   // Manejar los cambios en los inputs
   const handleInputChange = (e) => {
@@ -64,41 +69,48 @@ function ArticleForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={ handleSubmit }>
       <h2>Registrar Artículo</h2>
-      <input 
+      <Input 
         type="text" 
         name="name"
-        placeholder="Nombre" 
-        value={articleForm.name} 
-        onChange={handleInputChange} 
+        label="Nombre" 
+        value={ articleForm.name } 
+        onChange={ handleInputChange } 
+        id="name"
         required 
       />
-      <select 
+      <Select 
         name="category"
-        value={articleForm.category} 
-        onChange={handleInputChange} 
+        value={ articleForm.category } 
+        onChange={ handleInputChange }
+        options={ categoryOptions } 
+        label="Categoria"
+        id="category"
         required
-      >
-        <option value="">Categoría</option>
-        <option value="Informática">Informática</option>
-        <option value="Deportes">Deportes</option>
-      </select>
-      <input 
+      />
+      <Input 
         type="text" 
         name="description"
-        placeholder="Descripción" 
-        value={articleForm.description} 
-        onChange={handleInputChange} 
+        label="Descripción" 
+        value={ articleForm.description } 
+        onChange={ handleInputChange } 
+        id="description"
+        required
       />
-      <input 
+      <Input 
         type="text" 
         name="image_url"
-        placeholder="URL de la imagen" 
-        value={articleForm.image_url} 
-        onChange={handleInputChange} 
+        label="URL de la imagen" 
+        value={ articleForm.image_url } 
+        onChange={ handleInputChange } 
+        id="image_url"
+        required
       />
-      <button type="submit">Guardar</button>
+      <Button 
+        btnType="btn-primary"
+        text="Guardar artículo"
+      />
       <ToastContainer />
     </form>
   );

@@ -3,7 +3,6 @@
 body {
   align-items: center;
   background-color: $la-color-gray-lighter;
-  display: flex;
   font-family: 'Segoe UI', Tahoma;
   justify-content: center;
   margin: 0;
@@ -11,45 +10,23 @@ body {
   padding: 0;
 }
 
-.App {
-  text-align: center;
-}
+// .App {
+//   text-align: center;
+// }
 
 h1, h2 {
   color: $la-color-purple-primary;
 }
 
 form {
+  align-items: center;
   background-color: $la-color-white-primary;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  justify-content: center;
+  display: flex; /* Flexbox para alinear los elementos */
+  flex-direction: column; /* Alinea los elementos en columna */
+  justify-content: center; /* Centra los elementos verticalmente */
   margin: 20px auto;
   padding: 10px;
   width: 455px;
-}
-
-// input[type="text"], input[type="email"], input[type="date"], input[type="password"], select {
-//   border: 1px solid $la-color-gray-light;
-//   border-radius: 5px;
-//   margin: 10px 0;
-//   padding: 10px;
-//   width: 470px;
-// }
-
-button {
-  background-color: transparent;
-  border: 1px solid $la-color-pink-primary;
-  border-radius: 8px;
-  color: $la-color-pink-primary;
-  cursor: pointer;
-  font-family: 'Segoe UI', Tahoma;
-  font-size: 15px;
-  padding: 7px 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-button:hover {
-  background-color: $la-color-pink-primary;
-  color: $la-color-white-primary;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Input from '../../UI/src/TextInput';
+import Input from '../../UI/src/Input';
+import Button from '../../UI/src/Button';
 import '../style/input.scss';
 
 const Login = () => {
@@ -78,7 +79,10 @@ const Login = () => {
         id="password"
         required
       />
-      <button type="submit">Iniciar Sesión</button>
+      <Button 
+        btnType="btn-primary"
+        text="Iniciar sesión"
+      />
     </form>
   );
 };

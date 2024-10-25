@@ -1,4 +1,4 @@
-import '../style/textInput.scss';
+import '../style/input.scss';
 
 const Input = ({ label, ...inputProps }) => {
     return (

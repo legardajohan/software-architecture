@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
+import Header from './components/UI/header/src/Header';
 import ArticleForm from './components/article/src/ArticleForm';
 import ArticleList from './components/article/src/ArticleList';
 import LoanForm from './components/loan/src/LoanForm';
@@ -11,11 +11,13 @@ import UserList from './components/user/src/UserList';
 import PrivateRoute from './components/PrivateRoute'; // Importar PrivateRoute
 import './style/style.scss';
 
+
+
 function App() {
   return (
     <Router>
+      <Header />
       <div className="App">
-        <Header />
         <Routes>
           {/* Rutas públicas */}
           <Route path="/login" element={<Login />} />

@@ -1,0 +1,37 @@
+@import '../../../../index.scss';
+
+.btn-primary {
+    background-color: $la-color-pink-primary;
+    border: 1px solid $la-color-pink-primary;
+    border-radius: 11px;
+    color: $la-color-white-primary;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma;
+    font-size: 15px;
+    margin: 10px 15px;
+    padding: 9px 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+  
+.btn-primary:hover {
+    background-color: $la-color-pink-dark;
+    color: $la-color-white-primary;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid $la-color-pink-primary;
+    border-radius: 8px;
+    color: $la-color-pink-primary;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma;
+    font-size: 15px;
+    margin: 10px 15px;
+    padding: 9px 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+  
+.btn-outline:hover {
+    background-color: $la-color-pink-primary;
+    color: $la-color-white-primary;
+}
