@@ -19,14 +19,15 @@ function ArticleList() {
         { articles.map(( article ) => (
           <div key={ article._id } className="article-card">
             <div className="article-image-content">
-              <img src={ article.image_url } alt={ `${ article.name } image` } className="article-image" />
+              <img src={ article.image_url } alt={ article.name } className="article-image" />
             </div>
             <div className="article-content">
               <p className="article-name">{ article.name }</p>
               <p className="article-category">{ article.category }</p>
               <p className="article-description">{ article.description }</p>
-              <button className="article-button">Solicitar</button>
               <Button 
+                type="button"
+                btnClass="btn-outline-small"
                 text="Solicitar"
               />
             </div>

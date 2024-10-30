@@ -1,5 +1,12 @@
 @import '../../../../index.scss';
 
+.container-user {
+    display: flex;
+    flex-wrap: wrap;       // Permite que las cards pasen a la siguiente línea si no caben en una sola fila
+    gap: 20px;             // Espacio entre las cards
+    justify-content: start;
+}
+
 .user-card {
     background-color: $la-color-white-primary;
     border-radius: 10px;
@@ -7,7 +14,7 @@
     height: 180px;
     margin-bottom: 35px;
     margin-top: 30px;
-    padding-top: 60px;
+    padding: 60px 15px 2px;
     position: relative;
     text-align: center;
     width: 270px;
@@ -48,21 +55,4 @@ h2 {
 .user-info p {
     color: $la-color-gray-primary;
     margin: 5px 0;
-}
-
-.user-edit-button {
-    background-color: transparent;
-    border: 1px solid $la-color-pink-primary;
-    border-radius: 8px;
-    color: $la-color-pink-primary;
-    cursor: pointer;
-    font-size: 13px;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    width: 50%;
-}
-
-.user-edit-button:hover {
-    background-color: $la-color-pink-primary;
-    color: $la-color-white-primary;
 }

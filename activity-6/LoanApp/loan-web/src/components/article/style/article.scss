@@ -1,12 +1,10 @@
 @import '../../../../index.scss';
 
 .container-card {
-    background-color: aqua;
     display: flex;
     flex-wrap: wrap;       // Permite que las cards pasen a la siguiente línea si no caben en una sola fila
     gap: 20px;             // Espacio entre las cards
     justify-content: start;
-    padding: 5px 40px;
 }
 
 .article-card {
@@ -39,7 +37,7 @@
     width: 100%;
 }
 .article-content {
-    padding: 16px;
+    padding: 10px 20px;
     text-align: left;
 }
 .article-name {
@@ -60,22 +58,4 @@
 .article-description {
     font-size: 14px;
     margin: 0 0 16px;
-}
-
-.article-button {
-    background-color: transparent;
-    border: 1px solid $la-color-pink-primary;
-    border-radius: 8px;
-    color: $la-color-pink-primary;
-    cursor: pointer;
-    font-size: 13px;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    width: 100%;
-}
-
-.article-button:hover {
-    background-color: $la-color-pink-primary;
-    color: $la-color-white-primary;
-}
-  
+}  

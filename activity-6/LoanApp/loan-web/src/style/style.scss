@@ -11,14 +11,13 @@ body {
 }
 
 .App {
-  background-color: bisque;
   justify-content: center;
   margin: 10px 30px;
+  padding: 5px 40px;
 }
 
 h1, h2, h3 {
   color: $la-color-purple-primary;
-  margin-left: 40px;
 }
 
 form {
