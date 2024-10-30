@@ -80,7 +80,7 @@ const Login = () => {
         required
       />
       <Button 
-        btnType="btn-primary"
+        btnClass="btn-primary"
         text="Iniciar sesión"
       />
     </form>

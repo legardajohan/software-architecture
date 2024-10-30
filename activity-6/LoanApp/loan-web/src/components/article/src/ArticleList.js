@@ -1,5 +1,6 @@
-import '../style/article.scss';
 import React, { useEffect, useState } from 'react';
+import Button from '../../UI/src/Button';
+import '../style/article.scss';
 
 function ArticleList() {
   const [articles, setArticles] = useState([]);
@@ -12,22 +13,27 @@ function ArticleList() {
   }, []);
 
   return (
-    <div>
-      <h2>Artículos</h2>
-      {articles.map((article) => (
-        <div key={article._id} className="article-card">
-          <div className="article-image-content">
-            <img src={article.image_url} alt={`${article.name} image`} className="article-image" />
+    <>
+      <h3>Artículos</h3>
+      <div className="container-card">
+        { articles.map(( article ) => (
+          <div key={ article._id } className="article-card">
+            <div className="article-image-content">
+              <img src={ article.image_url } alt={ `${ article.name } image` } className="article-image" />
+            </div>
+            <div className="article-content">
+              <p className="article-name">{ article.name }</p>
+              <p className="article-category">{ article.category }</p>
+              <p className="article-description">{ article.description }</p>
+              <button className="article-button">Solicitar</button>
+              <Button 
+                text="Solicitar"
+              />
+            </div>
           </div>
-          <div className="article-content">
-            <p className="article-name">{article.name}</p>
-            <p className="article-category">{article.category}</p>
-            <p className="article-description">{article.description}</p>
-            <button className="article-button">Solicitar</button>
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 }
 

@@ -116,7 +116,8 @@ const LoanForm = () => {
         id="state"
       />
       <Button 
-        btnType="btn-primary"
+        type="submit"
+        btnClass="btn-primary"
         text="Guardar préstamo"
       />
       <ToastContainer />

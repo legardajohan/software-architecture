@@ -1,10 +1,11 @@
 import '../style/button.scss';
 
-const Button = ({ btnType, text }) => {
+const Button = ({ onClick, type, btnClass, text }) => {
     return (
         <button 
-            type="submit"
-            className={ btnType }
+            onClick={ onClick ? onClick : undefined } // Solo agrega onClick si esta definido
+            type={ type }
+            className={ btnClass }
         >
             { text }
         </button>

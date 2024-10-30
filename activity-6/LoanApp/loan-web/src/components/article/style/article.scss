@@ -1,12 +1,26 @@
 @import '../../../../index.scss';
 
+.container-card {
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;       // Permite que las cards pasen a la siguiente línea si no caben en una sola fila
+    gap: 20px;             // Espacio entre las cards
+    justify-content: start;
+    padding: 5px 40px;
+}
+
 .article-card {
     background-color: $la-color-white-primary;
     border-radius: 11px;
     box-shadow: 0 4px 11px rgba(0, 0, 0, 0.1);
     height: 360px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
     width: 320px;
+}
+
+.article-card:hover {
+    transform: scale(1.03);
 }
 
 .article-image-content {

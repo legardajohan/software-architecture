@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../UI/src/Input';
+import Button from '../../UI/src/Button';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Importar estilos de toastify
 
@@ -118,7 +119,11 @@ function Register() {
         onChange={handleInputChange} 
         required 
       />
-      <button type="submit">Guardar Usuario</button>
+      <Button 
+        type="submit"
+        btnClass="btn-primary"
+        text="Registrarme"
+      />
       <ToastContainer />
     </form>
   );

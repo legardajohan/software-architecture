@@ -11,8 +11,6 @@ import UserList from './components/user/src/UserList';
 import PrivateRoute from './components/PrivateRoute'; // Importar PrivateRoute
 import './style/style.scss';
 
-
-
 function App() {
   return (
     <Router>

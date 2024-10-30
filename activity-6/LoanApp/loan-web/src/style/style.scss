@@ -10,12 +10,15 @@ body {
   padding: 0;
 }
 
-// .App {
-//   text-align: center;
-// }
+.App {
+  background-color: bisque;
+  justify-content: center;
+  margin: 10px 30px;
+}
 
-h1, h2 {
+h1, h2, h3 {
   color: $la-color-purple-primary;
+  margin-left: 40px;
 }
 
 form {

@@ -11,6 +11,7 @@ const Header = () => {
 
     // Función para cerrar sesión
     const handleLogout = () => {
+        console.log('Cerrando sesión desde Header');
         localStorage.removeItem('token'); // Elimina el token
         navigate('/login'); // Redirige al login
     };
@@ -38,28 +39,32 @@ const Header = () => {
                             </>
                         ) : (
                             <>
-                                <Link to="/login">Login</Link> |
-                                <Link to="/register">Registrar</Link> |
+                                <Link to="/login">Login</Link>
+                                <Link to="/register">Registrar</Link>
                                 <Link to="/loans">Préstamos</Link>
                             </>
                         )}
                     </ul>
                 </nav>
-                <div className="user-actions">
-                    <div className="user-profile">
-                        <img
-                            src="https://i.pinimg.com/enabled_hi/564x/a4/24/cb/a424cb438cd1e629b77074eaff9fcd0e.jpg"
-                            alt="Foto de perfil"
-                            className="profile-pic"
-                        />
-                        <span className="user-name">Vanessa</span>
-                        <Button 
-                            onClick={ handleLogout }
-                            btnType="btn-outline"
-                            text="Cerrar sesión" 
-                        />
+                {token ? (
+                    <div className="user-actions">
+                        <div className="user-profile">
+                            <img
+                                src="https://i.pinimg.com/enabled_hi/564x/a4/24/cb/a424cb438cd1e629b77074eaff9fcd0e.jpg"
+                                alt="Foto de perfil"
+                                className="profile-pic"
+                            />
+                            <span className="user-name">Vanessa</span>
+                            <Button
+                                onClick={ handleLogout }
+                                type="button"
+                                btnClass="btn-outline"
+                                text="Cerrar sesión"
+                            />
+                        </div>
                     </div>
-                </div>
+                ): undefined}
+
             </div>
         </header>
     );

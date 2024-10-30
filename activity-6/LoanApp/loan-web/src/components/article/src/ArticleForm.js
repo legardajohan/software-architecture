@@ -108,7 +108,8 @@ function ArticleForm() {
         required
       />
       <Button 
-        btnType="btn-primary"
+        type="submit"
+        btnClass="btn-primary"
         text="Guardar artículo"
       />
       <ToastContainer />
