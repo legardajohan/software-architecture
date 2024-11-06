@@ -1,15 +1,32 @@
 @import '../../../../index.scss';
 
+.select-group {    
+    margin: 10px;
+    position: relative;
+}
+
 .select {
     border: 1px solid $la-color-gray-light;
     border-radius: 11px;
     font-family: 'Segoe UI', Tahoma;
     font-size: 15px;
-    margin: 10px 20px;
     padding: 7px 15px;
-    width: 400px;
+    width: 430px;
 }
 
 .select:focus {
     border: 1px solid $la-color-pink-primary;
+}
+
+.select-label {
+    background-color: $la-color-white-primary;
+    color: $la-color-pink-primary;
+    font-size: 12px;
+    left: 15px;
+    padding: 0 5px;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    transition: color 0.2s;
 }

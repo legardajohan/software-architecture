@@ -1,6 +1,7 @@
 @import '../../../../index.scss';
 
 .container-user {
+    // background-color: bisque;
     display: flex;
     flex-wrap: wrap;       // Permite que las cards pasen a la siguiente línea si no caben en una sola fila
     gap: 20px;             // Espacio entre las cards

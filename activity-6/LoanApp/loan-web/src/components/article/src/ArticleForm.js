@@ -85,7 +85,8 @@ function ArticleForm() {
         value={ articleForm.category } 
         onChange={ handleInputChange }
         options={ categoryOptions } 
-        label="Categoria"
+        label="Categoría"
+        text="Selecciona la categoría"
         id="category"
         required
       />

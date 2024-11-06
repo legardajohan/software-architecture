@@ -95,10 +95,11 @@ const LoanForm = () => {
       />
       <DateInput 
         type="date" 
-        name="return_date" 
-        value={ loanForm.return_date } 
+        name="loan_date" 
+        value={ loanForm.loan_date } 
         onChange={ handleInputChange }
         label="Fecha de préstamo"
+        id="loan_date"
       />
       <DateInput 
         type="date" 
@@ -106,13 +107,15 @@ const LoanForm = () => {
         value={ loanForm.return_date } 
         onChange={ handleInputChange } 
         label="Fecha de retorno"
+        id="return_date"
       />
       <Select 
         name="state" 
         value={ loanForm.state } 
         onChange={ handleInputChange }
         options={ loanState }
-        label="Selecciona el estado"
+        label="Estado"
+        text="Selecciona el estado"
         id="state"
       />
       <Button 
