@@ -8,11 +8,16 @@ const Header = () => {
     const navigate = useNavigate();
     // Obtener el token de autenticación del localStorage
     const token = localStorage.getItem('token');
+    // Obtener los datos del usuario
+    const user = JSON.parse(localStorage.getItem('user'));
+    const firstName = user?.name?.split(' ')[0];
+    console.log('Datos del usuario en header: ', user);
 
     // Función para cerrar sesión
     const handleLogout = () => {
         console.log('Cerrando sesión desde Header');
         localStorage.removeItem('token'); // Elimina el token
+        localStorage.removeItem('user'); // Elimina datos del usuario
         navigate('/login'); // Redirige al login
     };
 
@@ -50,11 +55,11 @@ const Header = () => {
                     <div className="user-actions">
                         <div className="user-profile">
                             <img
-                                src="https://i.pinimg.com/enabled_hi/564x/a4/24/cb/a424cb438cd1e629b77074eaff9fcd0e.jpg"
+                                src={ user.avatar_url }
                                 alt="Foto de perfil"
                                 className="profile-pic"
                             />
-                            <span className="user-name">Vanessa</span>
+                            <span className="user-name">{ firstName }</span>
                             <Button
                                 onClick={ handleLogout }
                                 type="button"

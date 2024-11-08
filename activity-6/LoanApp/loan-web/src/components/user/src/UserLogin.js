@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../UI/src/Input';
 import Button from '../../UI/src/Button';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Importar estilos de toastify
 import '../style/input.scss';
 
 const Login = () => {
+
   const [ loginForm, setLoginForm ] = useState({
     email: '',
     password: ''
   });
+
   const navigate = useNavigate(); // Hook para redirigir 
 
   const handleInputChange = (e) => {
@@ -21,7 +25,6 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const singIn = { ...loginForm };
 
     try {
       const response = await fetch('http://localhost:3001/login', {
@@ -29,17 +32,20 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(singIn)
+        body: JSON.stringify(loginForm)
       });
       // Verificando datos enviados
-      console.log(singIn);
+      console.log('Cambio a loginForm: ', loginForm);
 
       const data = await response.json();
       // Inspección de la respuesta del backend
       console.log('Información recibida del backend:', data);
 
-      if (data.token) {
+      if (response.ok && data.token) {
+        // Almacenamos los datos del usuario y el token
         localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user)); // Guarda el usuario
+        toast.success('Login exitoso!');
         console.log('Login exitoso');
 
         // Limpiamos el formulario
@@ -51,9 +57,10 @@ const Login = () => {
         // Redirigimos a la página que deseamos llevar al usuario, loans
         navigate('/users'); // ruta de preferencia
       } else {
-        console.error('Error en el login');
+        toast.error(data.error || 'Error en el inicio de sesión');
       }
     } catch (error) {
+      toast.error('Error de red o servidor');
       console.error('Error al hacer login:', error);
     }
   };
@@ -83,6 +90,7 @@ const Login = () => {
         btnClass="btn-primary"
         text="Iniciar sesión"
       />
+      <ToastContainer />
     </form>
   );
 };

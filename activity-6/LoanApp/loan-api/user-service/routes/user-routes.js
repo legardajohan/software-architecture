@@ -58,7 +58,7 @@ router.get('/users', async (req, res) => {
 router.post('/login', async (req, res) => {
   
   const { email, password } = req.body;
-  console.log("Datos recibidos del front: ", req.body);
+// console.log("Datos recibidos del front: ", req.body);
 
   try {
     const user = await User.findOne({ email });
@@ -67,15 +67,25 @@ router.post('/login', async (req, res) => {
 
     // Comparar la constraseña ingresada con la almacenada
     const isPasswordValid = await bcrypt.compare(password, user.password);
-    console.log('Comparando contraseñas: ', password, ' y ', user.password);
+    console.log('Comparando contraseñas [user-routes.js]: ', password, ' y ', user.password);
     
     // Comparando contraseña que viene de Mongo
-    console.log('Contraseña almacenada (hash): ', user.password);
+    // console.log('Contraseña almacenada (hash): ', user.password);
     if (!isPasswordValid) return res.status(401).json({ error: 'Contraseña incorrecta' });
 
     // Generar el token JWT 
     const token = jwt.sign({ userId: user._id }, secretKey, { expiresIn: '1h' });
-    res.json({ token });
+    // Enviar el toke y datos del usuario desde login
+    res.json({ 
+      token, 
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+        avatar_url: user.avatar_url
+      }
+    });
   } catch (error) {
     res.status(500).json({ error: 'Error al iniciar sesión' });
   }
