@@ -18,7 +18,13 @@
     padding: 60px 15px 2px;
     position: relative;
     text-align: center;
+    transition: transform 0.3s ease;
     width: 270px;
+}
+
+.user-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
 }
 
 .user-avatar {

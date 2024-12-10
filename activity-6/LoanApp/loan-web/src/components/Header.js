@@ -1,3 +1,5 @@
+// No esta en funcionamiento, ya se encuentra refactorizado
+
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
